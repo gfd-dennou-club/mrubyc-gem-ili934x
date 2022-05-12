@@ -92,14 +92,14 @@ class ILI934X
         else
           ch = c
         end
-        x += SPI.__draw_char(x, y, ch, toc(color), height)
+        x += ili934x_draw_char(x, y, ch, toc(color), height)
         x += margin_x
       end
     end
 
     def draw_pixel(x, y, color)
       return if x < 0 || x > 320 || y < 0 || y > 240
-      SPI.__draw_pixel(x, y, toc(color))
+      ili934x_draw_pixel(x, y, toc(color))
     end
 
     def draw_rectangle(x1, y1, x2, y2, color)
@@ -110,15 +110,15 @@ class ILI934X
     end
 
     def draw_fillrectangle(x1, y1, x2, y2, color)
-      SPI.__draw_fillrectangle(x1, y1, x2, y2, toc(color))
+      ili934x_draw_fillrectangle(x1, y1, x2, y2, toc(color))
     end
 
     def draw_circle(x, y, r, color)
-      SPI.__draw_circle(x, y, r, toc(color))
+      ili934x_draw_circle(x, y, r, toc(color))
     end
 
     def draw_fillcircle(x, y, r, color)
-      SPI.__draw_fillcircle(x, y, r, toc(color))
+      ili934x_draw_fillcircle(x, y, r, toc(color))
     end
 
     def fill(color)
@@ -126,7 +126,7 @@ class ILI934X
     end
 
     def draw_line(x1, y1, x2, y2, color, weight = 1)
-      SPI.__draw_line(x1, y1, x2, y2, toc(color))
+      ili934x_draw_line(x1, y1, x2, y2, toc(color))
     end
 
     def toc(color)
