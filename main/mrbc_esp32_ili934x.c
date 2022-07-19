@@ -14,7 +14,6 @@
 static char* tag = "main";
 #define DMA_CHAN    2
 
-static struct RClass* mrbc_class_esp32_ili934x;
 spi_device_handle_t spidev;
 uint16_t dc;
 
@@ -295,13 +294,13 @@ mrbc_esp32_ili934x_draw_char(mrb_vm* vm, mrb_value* v, int argc)
 /*! Register SPI Class.p
  */
 void
-mrbc_mruby_esp32_spi_gem_init(struct VM* vm)
+mrbc_esp32_ili934x_gem_init(struct VM* vm)
 {
   // 各メソッド定義
-  mrbc_define_method(vm, mrbc_class_esp32_spi, "ili934x_draw_fillrectangle",mrbc_esp32_ili934x_draw_fillrectangle);
-  mrbc_define_method(vm, mrbc_class_esp32_spi, "ili934x_draw_circle",       mrbc_esp32_ili934x_draw_circle);
-  mrbc_define_method(vm, mrbc_class_esp32_spi, "ili934x_draw_fillcircle",   mrbc_esp32_ili934x_draw_fillcircle);
-  mrbc_define_method(vm, mrbc_class_esp32_spi, "ili934x_draw_line",         mrbc_esp32_ili934x_draw_line);
-  mrbc_define_method(vm, mrbc_class_esp32_spi, "ili934x_draw_pixel",        mrbc_esp32_ili934x_draw_pixel);
-  mrbc_define_method(vm, mrbc_class_esp32_spi, "ili934x_draw_char",         mrbc_esp32_ili934x_draw_char);
+  mrbc_define_method(0, mrbc_class_object, "ili934x_draw_fillrectangle",mrbc_esp32_ili934x_draw_fillrectangle);
+  mrbc_define_method(0, mrbc_class_object, "ili934x_draw_circle",       mrbc_esp32_ili934x_draw_circle);
+  mrbc_define_method(0, mrbc_class_object, "ili934x_draw_fillcircle",   mrbc_esp32_ili934x_draw_fillcircle);
+  mrbc_define_method(0, mrbc_class_object, "ili934x_draw_line",         mrbc_esp32_ili934x_draw_line);
+  mrbc_define_method(0, mrbc_class_object, "ili934x_draw_pixel",        mrbc_esp32_ili934x_draw_pixel);
+  mrbc_define_method(0, mrbc_class_object, "ili934x_draw_char",         mrbc_esp32_ili934x_draw_char);
 }
