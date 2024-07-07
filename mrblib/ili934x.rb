@@ -73,6 +73,8 @@ class ILI934X
         end
         c = char.ord
         cnt = 0
+        ch = c
+=begin
         (-7..-4).each do |i|
           if((c & 1 << (-i)) != 0)
             cnt += 1
@@ -92,6 +94,7 @@ class ILI934X
         else
           ch = c
         end
+=end
         x += ili934x_draw_char(x, y, ch, toc(color), height)
         x += margin_x
       end
